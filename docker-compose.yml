@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: luyme-postgres
+    environment:
+      POSTGRES_DB: luyme
+      POSTGRES_USER: luyme
+      POSTGRES_PASSWORD: luyme
+    ports:
+      - "5432:5432"
+    volumes:
+      - luyme_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  luyme_postgres_data:
